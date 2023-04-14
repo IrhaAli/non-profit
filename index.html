@@ -9,19 +9,12 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/index.css" type="text/css" />
 
+  <script src="https://unpkg.com/htmlincludejs"></script>
+
   <title>Home Page</title>
 </head>
-
 <body>
-  <header class="header">
-    <a href="#" class="logo">Non Profit Name</a>
-    <nav class="nav-items">
-      <a href="/events">Events</a>
-      <a href="/projects">Projects</a>
-      <a href="/get-involved">Get Involved</a>
-      <a href="/contact-us">Contact Us</a>
-    </nav>
-  </header>
+  <include src="header.html"></include>
   <main>
     <div class="intro">
       <h1>A Non Profit</h1>
@@ -64,24 +57,7 @@
         alt="me">
     </div>
   </main>
-  <footer class="footer">
-    <div class="copy">&copy; 2022 Non Profit Name</div>
-    <div class="bottom-links">
-      <div class="links">
-        <span>More Info</span>
-        <a href="/events">Events</a>
-        <a href="/projects">Projects</a>
-        <a href="/get-involved">Get Involved</a>
-        <a href="/contact-us">Contact Us</a>
-      </div>
-      <div class="links">
-        <span>Social Links</span>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </footer>
+  <include src="footer.html"></include>
 </body>
 
 </html>
