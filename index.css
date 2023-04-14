@@ -155,8 +155,10 @@ body {
   padding: 40px 80px;
 }
 
-.footer .copy {
+.copy {
   color: #fff;
+  display: flex;
+  align-self: flex-end;
 }
 
 .bottom-links {
