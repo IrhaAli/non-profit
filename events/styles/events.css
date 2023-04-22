@@ -1,27 +1,25 @@
 body {
-  border: 3px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 body #head {
-  border: 3px solid blue;
   text-align: center;
+  margin: 1em 0;
 }
 body .events--card {
-  border: 3px solid green;
+  border: 3px solid rgb(167, 167, 167);
+  border-radius: 5rem;
+  padding: 1em;
   width: 100em;
   display: flex;
 }
 body .events--card--img {
   width: 80%;
+  border-radius: 5rem;
 }
 body .events--card--body {
-  border: 3px solid red;
   margin: 0 1rem;
-}
-body .events--card--body--date {
-  border: 3px solid green;
 }
 body .events--card--body--date--text {
   display: inline-block;
