@@ -1,0 +1,28 @@
+body {
+  border: 3px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #head {
+  border: 3px solid blue;
+  text-align: center;
+}
+body .events--card {
+  border: 3px solid green;
+  width: 100em;
+  display: flex;
+}
+body .events--card--img {
+  width: 80%;
+}
+body .events--card--body {
+  border: 3px solid red;
+}
+body .events--card--body--date {
+  display: flex;
+  font-weight: bold;
+  color: aqua;
+}
+
+/*# sourceMappingURL=events.css.map */
