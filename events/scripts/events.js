@@ -1,3 +1,4 @@
-$(document).ready(function () {
-  console.log("jquery active")
-})
+$(() => {
+  console.log("jQuery loaded");
+  // console.log("eventlist: ", eventList);
+});
