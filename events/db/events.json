@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Tech Conference",
+    "date": "2023-05-15",
+    "location": "Toronto",
+    "description": "Lorem Ipsum"
+  },
+  {
+    "title": "Charity Run",
+    "date": "2023-06-10",
+    "location": "Vancouver",
+    "description": "Lorem Ipsum"
+  }
+]
