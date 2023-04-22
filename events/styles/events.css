@@ -18,11 +18,16 @@ body .events--card--img {
 }
 body .events--card--body {
   border: 3px solid red;
+  margin: 0 1rem;
 }
 body .events--card--body--date {
-  display: flex;
-  font-weight: bold;
-  color: aqua;
+  border: 3px solid green;
+}
+body .events--card--body--date--text {
+  display: inline-block;
+}
+body .events--card--body--button {
+  margin: 14rem 0rem 0rem 60rem;
 }
 
 /*# sourceMappingURL=events.css.map */

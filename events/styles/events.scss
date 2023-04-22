@@ -21,15 +21,20 @@ body {
 
       &--body {
         border: 3px solid red;
+        margin: 0 1rem;
 
         &--date {
-          display: flex;
-          font-weight:bold;
-          color: aqua;
+          border: 3px solid green;
+
+          &--text {
+            display: inline-block;
+          }
         }
 
+        &--button {
+          margin: 14rem 0rem 0rem 60rem;
+        }
       }
-
     }
   }
 }
