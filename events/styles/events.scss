@@ -17,6 +17,7 @@ body {
       padding: 1em;
       width: 100em;
       display: flex;
+      flex-wrap: wrap;
 
       &--img {
         width: 80%;
@@ -24,11 +25,15 @@ body {
       }
 
       &--body {
-        // border: 3px solid red;
         margin: 0 1rem;
+        border: 3px solid red;
+
+        &--content {
+          flex-wrap: wrap;
+        }
 
         &--date {
-          // border: 3px solid green;
+          border: 3px solid green;
 
           &--text {
             display: inline-block;
