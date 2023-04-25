@@ -70,7 +70,8 @@
     </h1>
     <div class="container">
       <!-- Insert Images here -->
-      <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox" id="images"></div>
+      <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox" id="images">
+      </div>
       <div class="modal fade" id="lightbox" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -101,6 +102,15 @@
           </div>
         </div>
       </div>
+
+      <!-- Add Image Form -->
+      <form>
+        <h5 id='errMess'></h5>
+        <textarea name='text' type='text' placeholder='Image URL'></textarea>
+        <div>
+          <button type='submit'>Add Image</button>
+        </div>
+      </form>
     </div>
   </main>
   <include src="./views/footer.html"></include>

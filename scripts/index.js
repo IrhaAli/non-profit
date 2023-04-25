@@ -10,7 +10,12 @@ $(() => {
       }
     })
 
-  // When add image button is clicked
+  // Display add image form
+  let loggedIn = true;
+  const $showForm = $('form');
+  $showForm.css("display", (loggedIn) ? "block" : "none");
+
+  // Add Image
   $('form').on('submit', submitImage);
 });
 
@@ -24,37 +29,22 @@ const createImageElement = function(image, i) {
   return { $image, $imageSelected };
 };
 
-const submitImage = function(image) {
+const submitImage = function(event) {
   // // Initial settings
-  // event.preventDefault();
-  // const $errorMessage = $(this).find('#errMess');
-  // const $textArea = $(this).find('title');
-  // console.log($textArea)
+  event.preventDefault();
+  const $errorMessage = $(this).find('#errMess');
+  const $textArea = $(this).find('textarea');
 
-  // // Get validity of the event details
-  // const $title = $textArea.val();
-  // const $date = $textArea.val();
-  // const $location = $textArea.val();
-  // const $description = $textArea.val();
-  // const $image_url = $textArea.val();
-  // const validTweet = validate();
+  // Get validity of the url
+  const $imageUrl = $textArea.val();
 
-  // // valid vs. invalid tweet
-  // if (!validTweet) {
-  //   $errorMessage.css("display", "block");
-  //   return;
-  // }
-  // // if tweet is valid send it to the server then prepend it to all tweets and clear textbox/textarea
-  // const tweetObj = { name: 'Irha', avatar: "/images/profile-hex.png", handle: "@IrhaAli", text: $tweetText };
-  // $.post("/tweets", tweetObj)
-  //   .then(function(response) {
-  //     $errorMessage.css("display", "none");
-  //     const $tweet = createTweetElement(response);
-  //     $('#tweets-container').prepend($tweet);
-  //     $textArea.val('');
-  //     $(this).find('output').text('140');
-  //   })
-  //   .catch(function(error) {
-  //     console.log(error);
-  //   });
+  // If invalid url
+  if (!$imageUrl) {
+    $errorMessage.text('Please type something');
+    $errorMessage.css("display", "block");
+    return;
+  }
+
+  // If valid url add it to the JSON file
+  
 };
