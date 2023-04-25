@@ -1,70 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="../index.css" type="text/css" />
-    <link rel="stylesheet" href="./styles/events.css" type="text/css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- External JS -->
-    <script src="https://unpkg.com/htmlincludejs"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
-    <script
-			  src="https://code.jquery.com/jquery-3.6.4.js"
-			  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
-			  crossorigin="anonymous"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="../index.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/events.css" type="text/css" />
 
-    <!-- Local JS -->
-    <script src="scripts/events.js" type="text/javascript" defer></script>
+  <!-- External JS -->
+  <script src="https://unpkg.com/htmlincludejs"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"></script>
 
-    <title>Non Profit Name | Events</title>
-  </head>
+  <!-- Local JS -->
+  <script src="scripts/events.js" type="text/javascript" defer></script>
 
-  <body>
-    <include src="../../header.html"></include>
-    <h1 id="head">Events</h1>
-    <main class="events">
-      <!-- Add new events here -->
-      <div class="events--card">
-        <img src="https://placehold.co/700x700" class="events--card--img" />
-        <div class="events--card--body">
-          <h2 class="events--card--body--title">Event Name</h2>
-          <div class="events--card--body--date">
-            <div class="events--card--body--date--text">1st Jan, 2023</div>
-            <div class="events--card--body--date--text">-</div>
-            <div class="events--card--body--date--text">7:00 PM</div>
-          </div>
-          <p class="events--card--body--content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <button
-            type="button"
-            class="events--card--body--button btn btn-primary"
-          >
-            Attend Event
-          </button>
-        </div>
+  <title>Non Profit Name | Events</title>
+</head>
+
+<body>
+  <include src="../../header.html"></include>
+  <h1 id="head">Events</h1>
+  <main class="events">
+    <!-- Add new event -->
+    <button type="button" class="events--card--body--button btn btn-primary">
+      Add Event
+    </button>
+
+    <form>
+      <h5 id='errMess' class="errMessStyle"></h5>
+      <textarea name='title' type='text' placeholder='Title'></textarea>
+      <textarea name='location' type='text' placeholder='Location'></textarea>
+      <textarea name='date' type='text' placeholder='Date and Time'></textarea>
+      <textarea name='image_url' type='text' placeholder='Image URL'></textarea>
+      <textarea name='description' type='text' placeholder='Description'></textarea>
+      <div>
+        <button type='submit'>Add New Event</button>
       </div>
-    </main>
-    <include src="../../footer.html"></include>
-  </body>
+    </form>
+
+    </div>
+  </main>
+  <include src="../../footer.html"></include>
+</body>
+
 </html>
