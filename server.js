@@ -14,6 +14,10 @@ app.use((req, res, next) => {
 });
 app.use(express.static("public"));
 
+app.get("/", (req, res) => {
+  res.render("index.html");
+})
+
 app.get("/events", (req, res) => {
   const events = require("./public/events/db/events.json");
   console.log("These are events: ", events);
