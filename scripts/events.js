@@ -1,7 +1,7 @@
 $(() => {
 
   // To display all events
-  fetch("db/events.json")
+  fetch("../db/events.json")
     .then(response => response.json())
     .then((events) => {
       for (const event of events) {
