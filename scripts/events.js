@@ -1,20 +1,19 @@
 $(() => {
-
   // To display all events
   fetch("../db/events.json")
-    .then(response => response.json())
+    .then((response) => response.json())
     .then((events) => {
       for (const event of events) {
         const $event = createEventElement(event);
-        $('.events').append($event);
+        $(".events").append($event);
       }
-    })
+    });
 
-    // When add events button is clicked
-    $('form').on('submit', submitEvent);
+  // When add events button is clicked
+  $("form").on("submit", submitEvent);
 });
 
-const createEventElement = function(event) {
+const createEventElement = function (event) {
   const $event = $(`
   <div class="events--card">
   <img src="${event.image_url}" class="events--card--img" />
@@ -25,15 +24,12 @@ const createEventElement = function(event) {
       <div class="events--card--body--date--text">${event.date}</div>
     </div>
     <p class="events--card--body--content">${event.description}</p>
-      <button type="button" class="events--card--body--button btn btn-primary">
-        Attend Event
-      </button>
     </div>
   </div>`);
   return $event;
 };
 
-const submitEvent = function(event) {
+const submitEvent = function (event) {
   // // Initial settings
   // event.preventDefault();
   // const $errorMessage = $(this).find('#errMess');
@@ -66,4 +62,24 @@ const submitEvent = function(event) {
   //   .catch(function(error) {
   //     console.log(error);
   //   });
+
+  event.preventDefault();
+  const formData = $(".eventForm").serialize();
+  console.log("formData: ", formData);
+  writeToJSON(formData);
+};
+
+const writeToJSON = (formData) => {
+  $.getJSON("../db/events.json", (data) => {
+    console.log("data: ", data);
+    data.push(formData);
+
+    $.ajax({
+      type: "POST",
+      url: "../db/events.json",
+      data: JSON.stringify(data),
+      dataType: "json",
+      contentType: "application/json",
+    }).then((res) => console.log(res));
+  });
 };
