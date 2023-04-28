@@ -1,3 +1,5 @@
+import { eventsObj } from "../db/event-db";
+
 $(() => {
   // To display all events
   fetch("../db/events.json")
