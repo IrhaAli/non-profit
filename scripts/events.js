@@ -1,19 +1,57 @@
-import { eventsObj } from "../db/event-db";
+// events object holding the events
+const eventsObj = {
+  0: {
+    title: "Tech Conference",
+    date: "2023-05-15 - 7:00pm",
+    location: "Toronto, ON, Canada",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    image_url:
+      "https://unknown.sytes.net/original_images/Food%20&%20Medcine/food%20&%20medicine-02.jpg",
+  },
+  1: {
+    title: "Charity Run",
+    date: "2023-06-10 - 11:00am",
+    location: "Vancouver, BC, Canada",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    image_url:
+      "https://unknown.sytes.net/original_images/Food%20&%20Medcine/food%20&%20medicine-02.jpg",
+  },
+};
+
+const addNewEvent = (formData) => {
+  eventsObj.title = formData[0].title;
+  eventsObj.date = formData[2].date;
+  eventsObj.location = formData[1].location;
+  eventsObj.description = formData[4].description;
+  eventsObj.image_url = formData[3].image_url;
+};
 
 $(() => {
   // To display all events
-  fetch("../db/events.json")
-    .then((response) => response.json())
-    .then((events) => {
-      for (const event of events) {
-        const $event = createEventElement(event);
-        $(".events").append($event);
-      }
-    });
+  // fetch("../db/events.json")
+  //   .then((response) => response.json())
+  //   .then((events) => {
+  //     for (const event of events) {
+  //       const $event = createEventElement(event);
+  //       $(".events").append($event);
+  //     }
+  //   });
+  console.log(eventsObj);
+  loadEvents();
 
   // When add events button is clicked
   $("form").on("submit", submitEvent);
 });
+
+const loadEvents = () => {
+  for (let singleEvent in eventsObj) {
+    const event = eventsObj[singleEvent];
+    const $event = createEventElement(event);
+    $(".events").append($event);
+  }
+};
 
 const createEventElement = function (event) {
   const $event = $(`
@@ -66,22 +104,24 @@ const submitEvent = function (event) {
   //   });
 
   event.preventDefault();
-  const formData = $(".eventForm").serialize();
+  const formData = $(".eventForm").serializeArray();
   console.log("formData: ", formData);
-  writeToJSON(formData);
+  addNewEvent(formData);
+  loadEvents();
+  // writeToJSON(formData);
 };
 
-const writeToJSON = (formData) => {
-  $.getJSON("../db/events.json", (data) => {
-    console.log("data: ", data);
-    data.push(formData);
+// const writeToJSON = (formData) => {
+//   $.getJSON("../db/events.json", (data) => {
+//     console.log("data: ", data);
+//     data.push(formData);
 
-    $.ajax({
-      type: "POST",
-      url: "../db/events.json",
-      data: JSON.stringify(data),
-      dataType: "json",
-      contentType: "application/json",
-    }).then((res) => console.log(res));
-  });
-};
+//     $.ajax({
+//       type: "POST",
+//       url: "../db/events.json",
+//       data: JSON.stringify(data),
+//       dataType: "json",
+//       contentType: "application/json",
+//     }).then((res) => console.log(res));
+//   });
+// };
