@@ -1,38 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
-
 body {
   margin: 0;
   box-sizing: border-box;
-}
-
-/* CSS for header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f5f5f5;
-}
-
-.header .logo {
-  font-size: 25px;
-  font-family: 'Sriracha', cursive;
-  color: #000;
-  text-decoration: none;
-  margin-left: 30px;
-}
-
-.nav-items {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #f5f5f5;
-  margin-right: 20px;
-}
-
-.nav-items a {
-  text-decoration: none;
-  color: #000;
-  padding: 35px 20px;
 }
 
 /* CSS for main section */
@@ -148,49 +116,6 @@ form {
   font-size: 15px;
   color: #585858;
   margin: 10px 0;
-}
-
-/* CSS for footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #302f49;
-  padding: 40px 80px;
-}
-
-.copy {
-  color: #fff;
-  display: flex;
-  align-self: flex-end;
-}
-
-.bottom-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px 0;
-}
-
-.bottom-links .links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 40px;
-}
-
-.bottom-links .links span {
-  font-size: 20px;
-  color: #fff;
-  text-transform: uppercase;
-  margin: 10px 0;
-}
-
-.bottom-links .links a {
-  text-decoration: none;
-  color: #a1a1a1;
-  padding: 10px 20px;
 }
 
 /* Image Gallery Styling */

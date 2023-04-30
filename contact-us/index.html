@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="/index.css" type="text/css" />
-  <link rel="stylesheet" href="index.css" type="text/css" />
+  <link rel="stylesheet" href="../styles/contact-us.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://unpkg.com/htmlincludejs"></script>
@@ -17,41 +15,37 @@
 </head>
 
 <body>
-  <include src="../header.html"></include>
+  <include src="../views/header.html"></include>
   <main>
     <h1 class="contact-header">
       Contact Us
     </h1>
     <form id="fcf-form-id" class="fcf-form-class" action="https://formsubmit.co/nonprofit@email.com" method="POST">
-
       <div class="fcf-form-group">
         <label for="Name" class="fcf-label">Your name</label>
         <div class="fcf-input-group">
           <input type="text" id="Name" name="Name" class="fcf-form-control" required>
         </div>
       </div>
-
       <div class="fcf-form-group">
         <label for="Email" class="fcf-label">Your email address</label>
         <div class="fcf-input-group">
           <input type="email" id="Email" name="Email" class="fcf-form-control" required>
         </div>
       </div>
-
       <div class="fcf-form-group">
         <label for="Message" class="fcf-label">Your message</label>
         <div class="fcf-input-group">
           <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
         </div>
       </div>
-
       <div class="fcf-form-group">
         <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send
           Message</button>
       </div>
     </form>
   </main>
-  <include src="../footer.html"></include>
+  <include src="../views/footer.html"></include>
 </body>
 
 </html>
