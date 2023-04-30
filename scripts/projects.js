@@ -1,6 +1,9 @@
+// Global Variables
+let loggedIn = true;
+let totalProjects;
+
 $(async () => {
   // Display add project form option
-  let loggedIn = true;
   const $showForm = $('form');
   $showForm.css("display", (loggedIn) ? "block" : "none");
 
@@ -8,7 +11,12 @@ $(async () => {
   await fetch("../db/projects.json")
     .then(response => response.json())
     .then((projects) => {
-      loadProjects(projects, loggedIn)
+      totalProjects = projects.length
+      for (let id = 0; id < totalProjects; id++) {
+        const project = projects[id];
+        const $project = createProjectElement(project, id);
+        $(".projects").append($project);
+      }
     })
 
   // When project is added
@@ -18,15 +26,7 @@ $(async () => {
   $(".del-proj").on("click", deleteProject);
 });
 
-const loadProjects = (projectsArr, loggedIn) => {
-  for (let id = 0; id < projectsArr.length; id++) {
-    const project = projectsArr[id];
-    const $project = createProjectElement(project, id, loggedIn);
-    $(".projects").append($project);
-  }
-};
-
-const createProjectElement = function(project, id, loggedIn) {
+const createProjectElement = function(project, id) {
   const $project = $(`
   <div class="projects--card" id="${id}">
   <img src="${project.image_url}" class="projects--card--img" />
@@ -43,6 +43,7 @@ const createProjectElement = function(project, id, loggedIn) {
 const submitProject = function(project) {
   // Initial settings
   project.preventDefault();
+  totalProjects++;
 
   // Get the project
   const formData = $(".projectForm").serializeArray();
@@ -56,7 +57,7 @@ const submitProject = function(project) {
   // addNewProject(projectDetails);
 
   // Update project list (frontend)
-  const $project = createProjectElement(projectDetails);
+  const $project = createProjectElement(projectDetails, totalProjects);
   $(".projects").append($project);
 };
 

@@ -1,11 +1,11 @@
+// Global Variables
+let loggedIn = true;
+let totalEvents;
+
 $(async () => {
   // Display add event form option
-  let loggedIn = true;
   const $showForm = $('form');
   $showForm.css("display", (loggedIn) ? "block" : "none");
-
-  // Total events
-  let totalEvents;
 
   // To display all events
   await fetch("../db/events.json")
@@ -14,19 +14,19 @@ $(async () => {
       totalEvents = events.length;
       for (let id = 0; id < totalEvents; id++) {
         const event = events[id];
-        const $event = createEventElement(event, id, loggedIn);
+        const $event = createEventElement(event, id);
         $(".events").append($event);
       }
     })
 
   // When event is added
-  $("form").on("submit", (event) => submitEvent(event, totalEvents, loggedIn));
+  $("form").on("submit", submitEvent);
 
   // When event is removed
   $(".del-eve").on("click", deleteEvent);
 });
 
-const createEventElement = function(event, id, loggedIn) {
+const createEventElement = function(event, id) {
   const $event = $(`
   <div class="events--card" id="${id}">
   <img src="${event.image_url}" class="events--card--img" />
@@ -43,7 +43,7 @@ const createEventElement = function(event, id, loggedIn) {
   return $event;
 };
 
-const submitEvent = function(event, totalEvents, loggedIn) {
+const submitEvent = function(event) {
   // Initial settings
   event.preventDefault();
   totalEvents++;
@@ -52,7 +52,9 @@ const submitEvent = function(event, totalEvents, loggedIn) {
   const formData = $(".eventForm").serializeArray();
   const eventDetails = {}
   for (const item of formData) {
-    const $value = item.value
+    const $textArea = $(this).find(`textarea[name="${item.name}"`);
+    const $value = $textArea.val();
+    $textArea.val("");
     eventDetails[`${item.name}`] = $value;
   }
 
@@ -60,7 +62,7 @@ const submitEvent = function(event, totalEvents, loggedIn) {
   // addNewEvent(eventDetails);
 
   // Update event list (frontend)
-  const $event = createEventElement(eventDetails, totalEvents, loggedIn);
+  const $event = createEventElement(eventDetails, totalEvents);
   $(".events").append($event);
 };
 
