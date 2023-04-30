@@ -4,11 +4,11 @@ body #head {
 }
 
 body .events--card {
+  display: flex;
   border: 3px solid rgb(167, 167, 167);
   border-radius: 5rem;
   padding: 1em;
   width: 100em;
-  display: flex;
 }
 body .events--card--img {
   width: 80%;
