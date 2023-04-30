@@ -1,5 +1,5 @@
 // Global Variables
-let loggedIn = true;
+let loggedIn = document.cookie;
 let totalEvents;
 
 $(async () => {
