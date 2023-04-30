@@ -1,0 +1,49 @@
+body {
+  // border: 3px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #head {
+    // border: 3px solid blue;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  .projects {
+    &--card {
+      border: 3px solid rgb(167, 167, 167);
+      border-radius: 5rem;
+      padding: 1em;
+      width: 100em;
+      display: flex;
+      flex-wrap: wrap;
+
+      &--img {
+        width: 80%;
+        border-radius: 5rem;
+      }
+
+      &--body {
+        margin: 0 1rem;
+        border: 3px solid red;
+
+        &--content {
+          flex-wrap: wrap;
+        }
+
+        &--date {
+          border: 3px solid green;
+
+          &--text {
+            display: inline-block;
+          }
+        }
+
+        &--button {
+          margin: 14rem 0rem 0rem 60rem;
+        }
+      }
+    }
+  }
+}

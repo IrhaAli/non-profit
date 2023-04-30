@@ -1,0 +1,27 @@
+body #head {
+  text-align: center;
+  margin: 1em 0;
+}
+
+body .projects--card {
+  display: flex;
+  border: 3px solid rgb(167, 167, 167);
+  border-radius: 5rem;
+  padding: 1em;
+  width: 100em;
+}
+body .projects--card--img {
+  width: 80%;
+  border-radius: 5rem;
+}
+body .projects--card--body {
+  margin: 0 1rem;
+}
+body .projects--card--body--date--text {
+  display: inline-block;
+}
+body .projects--card--body--button {
+  margin: 14rem 0rem 0rem 60rem;
+}
+
+/*# sourceMappingURL=projects.css.map */
