@@ -54,7 +54,7 @@ const submitEvent = function(event) {
   }
 
   // Add event to JSON file
-  addNewEvent(eventDetails);
+  // addNewEvent(eventDetails);
 
   // Update event list (frontend)
   const $event = createEventElement(eventDetails);
