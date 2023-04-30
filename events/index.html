@@ -38,34 +38,31 @@
     <include src="../views/header.html"></include>
     <h1 id="head">Events</h1>
     <main class="events">
-      <!-- Add new event -->
-      <button type="button" class="events--card--body--button btn btn-primary">
-        Add Event
-      </button>
 
+      <!-- Add new event -->
       <form class="eventForm">
         <h5 id="errMess" class="errMessStyle"></h5>
         <textarea
           name="title"
           type="text"
           placeholder="Title"
-        ></textarea>
-        <textarea name="location" type="text" placeholder="Location"></textarea>
+        required ></textarea>
+        <textarea name="location" type="text" placeholder="Location" required></textarea>
         <textarea
           name="date"
           type="text"
           placeholder="Date and Time"
-        ></textarea>
+          required></textarea>
         <textarea
           name="image_url"
           type="text"
           placeholder="Image URL"
-        ></textarea>
+          required></textarea>
         <textarea
           name="description"
           type="text"
           placeholder="Description"
-        ></textarea>
+          required></textarea>
         <div>
           <button type="submit">Add New Event</button>
         </div>

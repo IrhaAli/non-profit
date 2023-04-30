@@ -1,8 +1,8 @@
 $(() => {
-  // To display all events
+  // To display all images
   fetch("../db/images.json")
     .then(response => response.json())
-    .then(({ images }) => {
+    .then((images) => {
       for (let i = 0; i < images.length; i++) {
         const { $image, $imageSelected } = createImageElement(images[i], i);
         $('#images').append($image);
@@ -32,19 +32,14 @@ const createImageElement = function(image, i) {
 const submitImage = function(event) {
   // // Initial settings
   event.preventDefault();
-  const $errorMessage = $(this).find('#errMess');
   const $textArea = $(this).find('textarea');
-
-  // Get validity of the url
   const $imageUrl = $textArea.val();
 
-  // If invalid url
-  if (!$imageUrl) {
-    $errorMessage.text('Please type something');
-    $errorMessage.css("display", "block");
-    return;
-  }
+  // Add it to the JSON file
+  // addNewImage($imageUrl);
 
-  // If valid url add it to the JSON file
-  
+  // Update image list (frontend)
+  const { $image, $imageSelected } = createImageElement($imageUrl, true);
+  $('#images').append($image);
+  $('.carousel-inner').append($imageSelected);
 };

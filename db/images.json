@@ -1,10 +1,8 @@
-{
-  "images": [
-    "https://unknown.sytes.net/original_images/Mix/1.jpg",
-    "https://unknown.sytes.net/original_images/Mix/2.jpg",
-    "https://unknown.sytes.net/original_images/Mix/3.jpg",
-    "https://unknown.sytes.net/original_images/Mix/4.jpg",
-    "https://unknown.sytes.net/original_images/Mix/6.jpg",
-    "https://unknown.sytes.net/original_images/Mix/7.jpg"
-  ]
-}
+[
+  "https://unknown.sytes.net/original_images/Mix/1.jpg",
+  "https://unknown.sytes.net/original_images/Mix/2.jpg",
+  "https://unknown.sytes.net/original_images/Mix/3.jpg",
+  "https://unknown.sytes.net/original_images/Mix/4.jpg",
+  "https://unknown.sytes.net/original_images/Mix/6.jpg",
+  "https://unknown.sytes.net/original_images/Mix/7.jpg"
+]
