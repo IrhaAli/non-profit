@@ -9,6 +9,9 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="./styles/index.css" type="text/css" />
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- External JS -->
   <script src="https://unpkg.com/htmlincludejs"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
@@ -72,44 +75,15 @@
       <!-- Insert Images here -->
       <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox" id="images">
       </div>
-      <div class="modal fade" id="lightbox" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div id="indicators" class="carousel slide" data-interval="false">
-              <ol class="carousel-indicators">
-                <li data-target="#indicators" data-slide-to="0" class="active"></li>
-                <li data-target="#indicators" data-slide-to="1"></li>
-                <li data-target="#indicators" data-slide-to="2"></li>
-                <li data-target="#indicators" data-slide-to="3"></li>
-                <li data-target="#indicators" data-slide-to="4"></li>
-                <li data-target="#indicators" data-slide-to="5"></li>
-              </ol>
-              <!-- Insert Images here -->
-              <div class="carousel-inner"></div>
-              <a class="carousel-control-prev" href="#indicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#indicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <!-- Add Image Form -->
-      <form>
-        <textarea name='text' type='text' placeholder='Image URL' required></textarea>
-        <div>
-          <button type='submit'>Add Image</button>
-        </div>
-      </form>
+    <!-- Add Image Form -->
+    <form>
+      <textarea name='text' type='text' placeholder='Image URL' required></textarea>
+      <div>
+        <button type='submit'>Add Image</button>
+      </div>
+    </form>
     </div>
   </main>
   <include src="./views/footer.html"></include>
