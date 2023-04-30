@@ -4,27 +4,27 @@ $(async () => {
   const $showForm = $('form');
   $showForm.css("display", (loggedIn) ? "block" : "none");
 
+  // Total events
+  let totalEvents;
+
   // To display all events
   await fetch("../db/events.json")
     .then(response => response.json())
     .then((events) => {
-      loadEvents(events, loggedIn)
+      totalEvents = events.length;
+      for (let id = 0; id < totalEvents; id++) {
+        const event = events[id];
+        const $event = createEventElement(event, id, loggedIn);
+        $(".events").append($event);
+      }
     })
 
   // When event is added
-  $("form").on("submit", submitEvent);
+  $("form").on("submit", (event) => submitEvent(event, totalEvents, loggedIn));
 
   // When event is removed
   $(".del-eve").on("click", deleteEvent);
 });
-
-const loadEvents = (eventsArr, loggedIn) => {
-  for (let id = 0; id < eventsArr.length; id++) {
-    const event = eventsArr[id];
-    const $event = createEventElement(event, id, loggedIn);
-    $(".events").append($event);
-  }
-};
 
 const createEventElement = function(event, id, loggedIn) {
   const $event = $(`
@@ -43,9 +43,10 @@ const createEventElement = function(event, id, loggedIn) {
   return $event;
 };
 
-const submitEvent = function(event) {
+const submitEvent = function(event, totalEvents, loggedIn) {
   // Initial settings
   event.preventDefault();
+  totalEvents++;
 
   // Get the event
   const formData = $(".eventForm").serializeArray();
@@ -59,7 +60,7 @@ const submitEvent = function(event) {
   // addNewEvent(eventDetails);
 
   // Update event list (frontend)
-  const $event = createEventElement(eventDetails);
+  const $event = createEventElement(eventDetails, totalEvents, loggedIn);
   $(".events").append($event);
 };
 
@@ -72,5 +73,5 @@ const deleteEvent = function(event) {
   // removeEvent(eventId);
 
   // Update event list (frontend)
-   $(`#${eventId}`).css("display", 'none');
+  $(`#${eventId}`).css("display", 'none');
 }
