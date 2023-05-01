@@ -1,12 +1,14 @@
-// Global Variable
+// Global Variables
 let password;
+let cookieKey;
+let cookieValue;
 
 $(async () => {
   // Get the password
   await fetch("../db/admin-password.txt")
     .then(response => response.text())
-    .then((pass) => {
-      password = pass
+    .then((loginDetails) => {
+      [password, cookieKey, cookieValue] = loginDetails.split('\n');
     })
 
   // Dynamically show button text
@@ -20,12 +22,13 @@ $(async () => {
 const loginCredentials = function() {
   // If logged in vs not logged in
   if (document.cookie) {
-    document.cookie = "admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC;"
+    document.cookie = `${cookieKey}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
     $(this).html("Admin Login");
   } else {
     const input = prompt("Please enter the admin password:");
-    if (input === password) {
-      document.cookie = "admin=true";
+    const decryptedPassword = CryptoJS.AES.decrypt(password, "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+    if (input === decryptedPassword) {
+      document.cookie = `${cookieKey}=${cookieValue}`;
       $(this).html("Logout");
     }
 
