@@ -49,7 +49,9 @@ const submitProject = function(project) {
   const formData = $(".projectForm").serializeArray();
   const projectDetails = {}
   for (const item of formData) {
-    const $value = item.value
+    const $textArea = $(this).find(`textarea[name="${item.name}"`);
+    const $value = $textArea.val();
+    $textArea.val("");
     projectDetails[`${item.name}`] = $value;
   }
 
