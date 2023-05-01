@@ -2,6 +2,8 @@
 let loggedIn = document.cookie;
 let totalProjects;
 
+console.log(loggedIn)
+
 $(async () => {
   // Display add project form option
   const $showForm = $('form');

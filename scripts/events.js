@@ -2,6 +2,8 @@
 let loggedIn = document.cookie;
 let totalEvents;
 
+console.log(loggedIn)
+
 $(async () => {
   // Display add event form option
   const $showForm = $('form');

@@ -22,13 +22,13 @@ $(async () => {
 const loginCredentials = function() {
   // If logged in vs not logged in
   if (document.cookie) {
-    document.cookie = `${cookieKey}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
+    document.cookie = `${cookieKey}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
     $(this).html("Admin Login");
   } else {
     const input = prompt("Please enter the admin password:");
     const decryptedPassword = CryptoJS.AES.decrypt(password, "Secret Passphrase").toString(CryptoJS.enc.Utf8);
     if (input === decryptedPassword) {
-      document.cookie = `${cookieKey}=${cookieValue}`;
+      document.cookie = `${cookieKey}=${cookieValue}; path=/`;
       $(this).html("Logout");
     }
 

@@ -2,6 +2,8 @@
 let loggedIn = document.cookie;
 let totalImages;
 
+console.log(loggedIn)
+
 $(async () => {
   // Display add image form
   const $showForm = $('form');
