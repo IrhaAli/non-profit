@@ -81,19 +81,31 @@ form {
   display: none;
 }
 
+/* below title */
 .achievements {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 40px 80px;
+  border-bottom: 2px solid #eeeeee;
 }
 
 .achievements .work {
   display: flex;
+  padding: 40px 80px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  border-radius: 1rem;
+  /* padding: 0 40px; */
+  /* border: 3px solid red; */
+}
+
+.achievements .work:hover {
+  background-color:#e2e2e2;
+  cursor: pointer;
+  scale: 110%;
+  transition: 0.3s ease-in-out;
+  overflow-x: hidden;
 }
 
 .achievements .work i {
@@ -117,13 +129,12 @@ form {
   color: #585858;
   margin: 10px 0;
 }
-
+/* about me */
 .about-me {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 80px;
-  border-top: 2px solid #eeeeee;
 }
 
 .about-me img {
