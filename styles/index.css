@@ -3,6 +3,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  background-color: rgb(227, 227, 227);
 }
 
 /* CSS for header */
@@ -90,12 +91,12 @@ form {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 2px solid #eeeeee;
 }
 
 .achievements .work {
   display: flex;
   padding: 40px 80px;
+  border: 1px solid #eeeeee;
   /* padding: 0rem 10rem; */
   flex-direction: column;
   justify-content: center;
@@ -140,10 +141,7 @@ form {
   justify-content: center;
   align-items: center;
   padding: 40px 80px;
-  background: url("https://unknown.sytes.net/original_images/Mix/33.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: none;
+  background-color: #f5f5f5;
 }
 
 .about-me img {
@@ -155,9 +153,7 @@ form {
 
 .about-me-text {
   /* margin-right: 60px; */
-  margin-right: 30rem;
-  background-color: red;
-  color: floralwhite;
+  margin-right: 10rem;
 }
 
 .about-me-text h2 {
