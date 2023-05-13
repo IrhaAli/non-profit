@@ -24,15 +24,12 @@ const createEventElement = function(event) {
       <div class="events--card--body--date--text">${event.date}</div>
     </div>
     <p class="events--card--body--content">${event.description}</p>
-      <button type="button" class="events--card--body--button btn btn-primary">
-        Attend Event
-      </button>
     </div>
   </div>`);
   return $event;
 };
 
-const submitEvent = function(event) {
+// const submitEvent = function(event) {
   // // Initial settings
   // event.preventDefault();
   // const $errorMessage = $(this).find('#errMess');
@@ -65,4 +62,4 @@ const submitEvent = function(event) {
   //   .catch(function(error) {
   //     console.log(error);
   //   });
-};
+// };
