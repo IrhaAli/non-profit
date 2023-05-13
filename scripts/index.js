@@ -1,4 +1,6 @@
 $(() => {
+  $(window).on('scroll', handleScroll);
+
   // To display all events
   fetch("../db/images.json")
     .then(response => response.json())
@@ -19,7 +21,7 @@ $(() => {
   $('form').on('submit', submitImage);
 });
 
-const createImageElement = function(image, i) {
+const createImageElement = function (image, i) {
   const $image = $(`<div class="col-12 col-md-6 col-lg-3">
   <img src="${image}" data-target="#indicators" data-slide-to="0" alt="" />
   </div>`)
@@ -29,7 +31,7 @@ const createImageElement = function(image, i) {
   return { $image, $imageSelected };
 };
 
-const submitImage = function(event) {
+const submitImage = function (event) {
   // // Initial settings
   event.preventDefault();
   const $errorMessage = $(this).find('#errMess');
@@ -46,5 +48,18 @@ const submitImage = function(event) {
   }
 
   // If valid url add it to the JSON file
-  
+
 };
+
+// add color on scroll
+const handleScroll = () => {
+  const navbar = document.querySelector(".header");
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+}
