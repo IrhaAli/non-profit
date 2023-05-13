@@ -4,6 +4,7 @@ $(() => {
 
   if(url.indexOf("events")) fetchEvents();
   if(url.indexOf("projects")) fetchProjects();
+  if(url.indexOf("get-involved")) fetchGetInvolved();
 });
 
 const fetchEvents = () => {
@@ -31,6 +32,19 @@ const fetchProjects = () => {
     })
 };
 
+const fetchGetInvolved = () => {
+  // To display all GetInvolved
+  fetch("../db/get_involved.json")
+    .then(response => response.json())
+    .then((get_involved) => {
+      console.log(get_involved);
+      for (const project of get_involved) {
+        const $project = createGetInvolvedElement(project);
+        $('.get_involved').append($project);
+      }
+    })
+};
+
 const createEventElement = function (event) {
   const $event = $(`
   <div class="events--card">
@@ -48,6 +62,22 @@ const createEventElement = function (event) {
 };
 
 const createProjectElement = function (project) {
+  const $project = $(`
+  <div class="projects--card">
+  <img src="${project.image_url}" class="projects--card--img" />
+  <div class="projects--card--body">
+    <h2 class="projects--card--body--title">${project.title}</h2>
+    <h3 class="projects--card--body--location ">${project.location}</h3>
+    <div class="projects--card--body--date">
+      <div class="projects--card--body--date--text">${project.date}</div>
+    </div>
+    <p class="projects--card--body--content">${project.description}</p>
+    </div>
+  </div>`);
+  return $project;
+};
+
+const createGetInvolvedElement = function (project) {
   const $project = $(`
   <div class="projects--card">
   <img src="${project.image_url}" class="projects--card--img" />
