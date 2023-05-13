@@ -3,6 +3,7 @@ $(() => {
   console.log("URL: ", url);
 
   if(url.indexOf("events")) fetchEvents();
+  if(url.indexOf("projects")) fetchProjects();
 });
 
 const fetchEvents = () => {
@@ -15,7 +16,20 @@ const fetchEvents = () => {
         $('.events').append($event);
       }
     })
-}
+};
+
+const fetchProjects = () => {
+  // To display all projects
+  fetch("../db/projects.json")
+    .then(response => response.json())
+    .then((projects) => {
+      console.log(projects);
+      for (const project of projects) {
+        const $project = createProjectElement(project);
+        $('.projects').append($project);
+      }
+    })
+};
 
 const createEventElement = function (event) {
   const $event = $(`
@@ -31,6 +45,22 @@ const createEventElement = function (event) {
     </div>
   </div>`);
   return $event;
+};
+
+const createProjectElement = function (project) {
+  const $project = $(`
+  <div class="projects--card">
+  <img src="${project.image_url}" class="projects--card--img" />
+  <div class="projects--card--body">
+    <h2 class="projects--card--body--title">${project.title}</h2>
+    <h3 class="projects--card--body--location ">${project.location}</h3>
+    <div class="projects--card--body--date">
+      <div class="projects--card--body--date--text">${project.date}</div>
+    </div>
+    <p class="projects--card--body--content">${project.description}</p>
+    </div>
+  </div>`);
+  return $project;
 };
 
 const submitEvent = function(event) {

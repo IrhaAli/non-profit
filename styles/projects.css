@@ -4,5 +4,35 @@ body {
   flex-direction: column;
   align-items: center;
 }
+body #head {
+  text-align: center;
+  margin-top: 7rem;
+}
+body .projects--card {
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5rem;
+  padding: 1em;
+  margin: 1rem;
+  display: flex;
+}
+body .projects--card--img {
+  width: 70%;
+  border-radius: 5rem;
+}
+body .projects--card--body {
+  margin: 0 1rem;
+}
+body .projects--card--body--title {
+  font-weight: 900;
+}
+body .projects--card--body--content {
+  flex-wrap: wrap;
+}
+body .projects--card--body--date {
+  font-weight: 500;
+}
+body .projects--card--body--date--text {
+  display: inline-block;
+}
 
 /*# sourceMappingURL=projects.css.map */
