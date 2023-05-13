@@ -1,5 +1,4 @@
 $(() => {
-
   // To display all events
   fetch("../db/events.json")
     .then(response => response.json())
@@ -20,7 +19,7 @@ const createEventElement = function(event) {
   <img src="${event.image_url}" class="events--card--img" />
   <div class="events--card--body">
     <h2 class="events--card--body--title">${event.title}</h2>
-    <h3 class="events--card--body--title">${event.location}</h3>
+    <h3 class="events--card--body--location ">${event.location}</h3>
     <div class="events--card--body--date">
       <div class="events--card--body--date--text">${event.date}</div>
     </div>
