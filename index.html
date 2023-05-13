@@ -12,13 +12,19 @@
   <!-- External JS -->
   <script src="https://unpkg.com/htmlincludejs"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="./style.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' defer></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js' defer></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js' defer></script>
 
+  <!-- slick js -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+
   <!-- Local JS -->
   <script src="../scripts/index.js" type="text/javascript" defer></script>
+  <script src="../scripts/fetchData.js" type="text/javascript" defer></script>
 
   <title>Home Page</title>
 </head>
@@ -77,9 +83,9 @@
     <h1 class="img-gallery-text">
       Image Gallery
     </h1>
-    <div class="container">
+    <div class="img-gallery-container">
       <!-- Insert Images here -->
-      <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox" id="images">
+      <!-- <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox" id="images">
       </div>
       <div class="modal fade" id="lightbox" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -96,9 +102,9 @@
                 <li data-target="#indicators" data-slide-to="3"></li>
                 <li data-target="#indicators" data-slide-to="4"></li>
                 <li data-target="#indicators" data-slide-to="5"></li>
-              </ol>
-              <!-- Insert Images here -->
-              <div class="carousel-inner"></div>
+              </ol> -->
+      <!-- Insert Images here -->
+      <!-- <div class="carousel-inner"></div>
               <a class="carousel-control-prev" href="#indicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -108,9 +114,9 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-          </div>
-        </div>
-      </div>
+          </div> -->
+      <!-- </div> -->
+      <!-- </div> -->
 
       <!-- Add Image Form
       <form>

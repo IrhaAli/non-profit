@@ -19,6 +19,8 @@ $(() => {
 
   // Add Image
   $('form').on('submit', submitImage);
+
+  // $(".container").slick();
 });
 
 const createImageElement = function (image, i) {
