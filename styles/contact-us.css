@@ -183,3 +183,8 @@ input[type="reset"].fcf-btn-block,
 input[type="button"].fcf-btn-block {
   width: 100%;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
