@@ -1,16 +1,8 @@
-// Global Variables
-let loggedIn = document.cookie;
-let totalImages;
+$(() => {
+  $(window).on('scroll', handleScroll);
 
-console.log(loggedIn)
-
-$(async () => {
-  // Display add image form
-  const $showForm = $('form');
-  $showForm.css("display", (loggedIn) ? "block" : "none");
-
-  // To display all images
-  await fetch("../db/images.json")
+  // To display all events
+  fetch("../db/images.json")
     .then(response => response.json())
     .then((images) => {
       totalImages = images.length;
@@ -23,22 +15,20 @@ $(async () => {
   // Add Image
   $('form').on('submit', submitImage);
 
-  // Remove Image
-  $(".del-img").on("click", deleteImage);
+  // $(".container").slick();
 });
 
-const createImageElement = function(image_url, id) {
-  const $image = $(`<div class="image" id="${id}">
-  <div class="col-12 col-md-6 col-lg-3">
-  <img src="${image_url}" data-target="#indicators" data-slide-to="0" alt="" />
-  </div>
-  ${(loggedIn) ? '<button class="del-img"><i class="fa fa-trash-o" style="font-size:48px;color:red"></i></button>' : ''}
-  </div>
-  `)
-  return $image
+const createImageElement = function (image, i) {
+  const $image = $(`<div class="col-12 col-md-6 col-lg-3">
+  <img src="${image}" data-target="#indicators" data-slide-to="0" alt="" />
+  </div>`)
+  const $imageSelected = $(`<div class="carousel-item ${(i) ? '' : 'active'}">
+  <img class="d-block w-100" src="${image}" alt="">
+  </div>`);
+  return { $image, $imageSelected };
 };
 
-const submitImage = function(event) {
+const submitImage = function (event) {
   // // Initial settings
   event.preventDefault();
   const $textArea = $(this).find('textarea');
@@ -46,22 +36,26 @@ const submitImage = function(event) {
   $textArea.val("");
   totalImages++;
 
-  // Add it to the JSON file
-  // addNewImage($imageUrl);
+  // If invalid url
+  if (!$imageUrl) {
+    $errorMessage.text('Please type something');
+    $errorMessage.css("display", "block");
+    return;
+  }
 
-  // Update image list (frontend)
-  const $image = createImageElement($imageUrl, totalImages);
-  $('#images').append($image);
+  // If valid url add it to the JSON file
+
 };
 
-const deleteImage = function(event) {
-  // Initial settings
-  event.preventDefault();
-  const imageId = $(this).closest('.image').attr('id');
+// add color on scroll
+const handleScroll = () => {
+  const navbar = document.querySelector(".header");
 
-  // Remove event from JSON file
-  // removeEvent(eventId);
-
-  // Update event list (frontend)
-  $(`#${imageId}`).css("display", 'none');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
 }

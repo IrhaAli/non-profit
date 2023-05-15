@@ -8,9 +8,10 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="../styles/projects.css" type="text/css" />
+  <link rel="stylesheet" href="../styles/footer.css" type="text/css" />
+  <link rel="stylesheet" href="../styles/header.css" type="text/css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="../scripts/fetchData.js" type="text/javascript" defer></script>
 
   <!-- External JS -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
@@ -26,31 +27,16 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" defer></script>
-
-  <!-- Local JS -->
-  <script src="../scripts/login.js" type="text/javascript" defer></script>
-  <script src="../scripts/projects.js" type="text/javascript" defer></script>
 
   <title>Non Profit Name | Projects</title>
 </head>
 
 <body>
-  <include src="../partials/header.html"></include>
-  <h1 id="head">Projects</h1>
+  <include src="../views/header.html"></include>
   <main class="projects">
-
-    <!-- Add new project -->
-    <form class="projectForm">
-      <textarea name="title" type="text" placeholder="Title" required></textarea>
-      <textarea name="image_url" type="text" placeholder="Image URL" required></textarea>
-      <textarea name="description" type="text" placeholder="Description" required></textarea>
-      <div>
-        <button type="submit">Add New Project</button>
-      </div>
-    </form>
+    <h1 id="head">Projects</h1>
   </main>
-  <include src="../partials/footer.html"></include>
+  <include src="../views/footer.html"></include>
 </body>
 
 </html>

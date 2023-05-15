@@ -22,16 +22,27 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/htmlincludejs"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="./style.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' defer></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js' defer></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js' defer></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js' defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" defer></script>
+
+  <!-- slick js -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+
+  <!-- slick js -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
 
   <!-- Local JS -->
   <script src="../scripts/login.js" type="text/javascript" defer></script>
   <script src="../scripts/index.js" type="text/javascript" defer></script>
+  <script src="../scripts/fetchData.js" type="text/javascript" defer></script>
 
   <title>Home Page</title>
 </head>
@@ -43,24 +54,33 @@
       <h1>A Non Profit</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-    <div class="achievements">
-      <div class="work">
-        <i class="fas fa-atom"></i>
-        <p class="work-heading">Projects</p>
-        <p class="work-text">This part can give a quick overview of the latest upcoming project and a link to it on the
-          Projects page.</p>
-      </div>
-      <div class="work">
-        <i class="fas fa-skiing"></i>
-        <p class="work-heading">Events</p>
-        <p class="work-text">This part can give a quick overview of the latest upcoming event happening and a link to it
-          on the Events page.</p>
-      </div>
-      <div class="work">
-        <i class="fas fa-ethernet"></i>
-        <p class="work-heading">Get Involved</p>
-        <p class="work-text">This part can give a quick overview of a way to get involved with this non-profit.</p>
-      </div>
+    <div class="below-intro">
+      <a class="below-intro--link" href="/projects">
+        <div class="achievements">
+          <div class="work">
+            <i class="fas fa-atom"></i>
+            <p class="work-heading">Projects</p>
+            <p class="work-text">This part can give a quick overview of the latest upcoming project and a link to it on
+              the
+              Projects page.</p>
+          </div>
+      </a>
+      <a class="below-intro--link" href="/events">
+        <div class="work">
+          <i class="fas fa-skiing"></i>
+          <p class="work-heading">Events</p>
+          <p class="work-text">This part can give a quick overview of the latest upcoming event happening and a link to
+            it
+            on the Events page.</p>
+        </div>
+      </a>
+      <a class="below-intro--link" href="get-involved/">
+        <div class="work">
+          <i class="fas fa-ethernet"></i>
+          <p class="work-heading">Get Involved</p>
+          <p class="work-text">This part can give a quick overview of a way to get involved with this non-profit.</p>
+        </div>
+      </a>
     </div>
     <div class="about-me">
       <div class="about-me-text">
@@ -81,19 +101,49 @@
     <h1 class="img-gallery-text">
       Image Gallery
     </h1>
-    <div class="container">
+    <div class="img-gallery-container">
       <!-- Insert Images here -->
-      <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox" id="images">
+      <!-- <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox" id="images">
       </div>
-    </div>
+      <div class="modal fade" id="lightbox" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div id="indicators" class="carousel slide" data-interval="false">
+              <ol class="carousel-indicators">
+                <li data-target="#indicators" data-slide-to="0" class="active"></li>
+                <li data-target="#indicators" data-slide-to="1"></li>
+                <li data-target="#indicators" data-slide-to="2"></li>
+                <li data-target="#indicators" data-slide-to="3"></li>
+                <li data-target="#indicators" data-slide-to="4"></li>
+                <li data-target="#indicators" data-slide-to="5"></li>
+              </ol> -->
+      <!-- Insert Images here -->
+      <!-- <div class="carousel-inner"></div>
+              <a class="carousel-control-prev" href="#indicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#indicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div> -->
+      <!-- </div> -->
+      <!-- </div> -->
 
-    <!-- Add Image Form -->
-    <form>
-      <textarea name='text' type='text' placeholder='Image URL' required></textarea>
-      <div>
-        <button type='submit'>Add Image</button>
-      </div>
-    </form>
+      <!-- Add Image Form
+      <form>
+        <h5 id='errMess'></h5>
+        <textarea name='text' type='text' placeholder='Image URL'></textarea>
+        <div>
+          <button type='submit'>Add Image</button>
+        </div>
+      </form> -->
     </div>
   </main>
   <include src="./partials/footer.html"></include>
