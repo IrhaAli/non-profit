@@ -6,5 +6,8 @@
     "jquery": "^3.6.4",
     "sass": "^1.62.1",
     "slick-carousel": "^1.8.1"
+  },
+  "scripts" : {
+    "watch-css": "node_modules/.bin/sass --watch src/styles/main.scss dist/styles/main.css"
   }
 }

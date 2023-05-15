@@ -215,13 +215,13 @@ form {
 /* Image Gallery Styling */
 .slick-carousel {
   /* position: relative; */
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   margin-bottom: 1rem;
 }
 
 .slick-carousel .slick-prev:before,
 .slick-carousel .slick-next:before {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   color: black;
   font-size: 30px;
   z-index: +2;
