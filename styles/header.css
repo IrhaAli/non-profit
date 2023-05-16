@@ -29,16 +29,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* background-color: #f5f5f5; */
   margin-right: 20px;
 }
 
 .nav-items a {
   text-decoration: none;
-  /* color: #000; */
   color: floralwhite;
   padding: 35px 20px;
-  /* border: 1px solid black; */
 }
 
 .nav-items a:hover {

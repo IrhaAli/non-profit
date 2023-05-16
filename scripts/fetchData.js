@@ -24,7 +24,6 @@ const fetchProjects = () => {
   fetch("../db/projects.json")
     .then(response => response.json())
     .then((projects) => {
-      console.log(projects);
       for (const project of projects) {
         const $project = createProjectElement(project);
         $('.projects').append($project);
@@ -37,7 +36,6 @@ const fetchGetInvolved = () => {
   fetch("../db/get_involved.json")
     .then(response => response.json())
     .then((get_involved) => {
-      console.log(get_involved);
       for (const project of get_involved) {
         const $project = createGetInvolvedElement(project);
         $('.get_involved').append($project);
@@ -47,7 +45,6 @@ const fetchGetInvolved = () => {
 
 const fetchImages = () => {
   $.getJSON("../db/images.json", (res) => {
-    console.log("res: ", res);
     const $carousel = $('.img-gallery-container').addClass('slick-carousel');
     $.each(res.images, (index, imageUrl) => {
       const $img = $("<img>").attr('src', imageUrl).addClass('img-gallery-container-image');
