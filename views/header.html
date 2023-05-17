@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/index.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/index.css" type="text/css" />
+    <script src="../scripts/index.js"></script>
+  </head>
 
-  <script src="../scripts/index.js"></script>
-</head>
-
-<body>
-  <header class="header">
-    <a href="/" class="logo">Non Profit Name</a>
-    <i class="bi bi-list hamburger"></i>
-    <nav class="nav-items">
-      <a href="/events">Events</a>
-      <a href="/projects">Projects</a>
-      <a href="/get-involved">Get Involved</a>
-      <a href="/contact-us">Contact Us</a>
-    </nav>
-  </header>
-</body>
-
+  <body>
+    <header class="header">
+      <div class="header-main">
+        <a href="/" class="logo">Non Profit Name</a>
+        <a href="javascript:void(0)" class="hamburger" onclick="revealMenu()">
+          <i class="bi bi-list"></i
+        ></a>
+      </div>
+      <nav class="nav-items">
+        <a href="/events">Events</a>
+        <a href="/projects">Projects</a>
+        <a href="/get-involved">Get Involved</a>
+        <a href="/contact-us">Contact Us</a>
+      </nav>
+    </header>
+  </body>
 </html>
