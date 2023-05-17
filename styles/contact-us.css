@@ -188,3 +188,36 @@ input[type="button"].fcf-btn-block {
   position: absolute;
   bottom: 0;
 }
+
+@media screen and (max-width: 820px) {
+  body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    /* border: 3px solid green; */
+    /* width: 100vw; */
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .contact-header {
+    padding: 0;
+    /* border: 3px solid red; */
+    margin: 4rem 0 1rem 0;
+  }
+  
+  #fcf-form-id {
+    text-align: left;
+    padding: 1rem;
+    /* border: 3px solid blue; */
+  }
+
+  .footer {
+    width: 90%;
+    border: 3px solid yellow;
+    margin: 0;
+  }
+}
