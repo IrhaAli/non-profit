@@ -306,16 +306,19 @@ form {
   }
 
   .below-intro {
-    /* border: 3px solid red; */
     margin: 0em;
     display: flex;
     flex-direction: column;
   }
 
   .below-intro--link {
-    /* border: 3px solid blue; */
     flex-direction: column;
     flex: 1;
+  }
+
+  .achievements .work .work-heading {
+    font-weight: 800;
+    color: #302f49;
   }
 
   .about-me {
