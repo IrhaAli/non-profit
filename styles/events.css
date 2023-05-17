@@ -8,7 +8,7 @@ body {
 }
 body #head {
   text-align: center;
-  margin-top: 7rem;
+  margin-top: 3rem;
 }
 body .events--card {
   border: 1px solid rgb(197, 197, 197);
