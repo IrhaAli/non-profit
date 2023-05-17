@@ -1,92 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="./styles/index.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="./styles/index.css" type="text/css" />
+    <!-- External JS -->
+    <script src="https://unpkg.com/htmlincludejs"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-  <!-- External JS -->
-  <script src="https://unpkg.com/htmlincludejs"></script>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' defer></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js' defer></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js' defer></script>
+    <!-- slick js -->
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
 
-  <!-- slick js -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- Local JS -->
+    <script src="../scripts/index.js" type="text/javascript" defer></script>
+    <script src="../scripts/fetchData.js" type="text/javascript" defer></script>
 
+    <title>Home Page</title>
+  </head>
 
-  <!-- Local JS -->
-  <script src="../scripts/index.js" type="text/javascript" defer></script>
-  <script src="../scripts/fetchData.js" type="text/javascript" defer></script>
-
-  <title>Home Page</title>
-</head>
-
-<body>
-  <include src="./views/header.html"></include>
-  <main>
-    <div class="intro">
-      <h1>A Non Profit</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="below-intro">
-      <a class="below-intro--link" href="/projects">
-        <div class="achievements">
-          <div class="work">
-            <i class="fas fa-atom"></i>
-            <p class="work-heading">Projects</p>
-            <p class="work-text">This part can give a quick overview of the latest upcoming project and a link to it on
-              the
-              Projects page.</p>
-          </div>
-      </a>
-      <a class="below-intro--link" href="/events">
-        <div class="work">
-          <i class="fas fa-skiing"></i>
-          <p class="work-heading">Events</p>
-          <p class="work-text">This part can give a quick overview of the latest upcoming event happening and a link to
-            it
-            on the Events page.</p>
-        </div>
-      </a>
-      <a class="below-intro--link" href="get-involved/">
-        <div class="work">
-          <i class="fas fa-ethernet"></i>
-          <p class="work-heading">Get Involved</p>
-          <p class="work-text">This part can give a quick overview of a way to get involved with this non-profit.</p>
-        </div>
-      </a>
-    </div>
-    <div class="about-me">
-      <div class="about-me-text">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.</p>
+  <body>
+    <include src="./views/header.html"></include>
+    <main>
+      <!-- intro -->
+      <div class="intro">
+        <h1>A Non Profit</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
-      <img src="https://unknown.sytes.net/original_images/Mix/33.jpg" alt="me">
-    </div>
 
-    <h1 class="img-gallery-text">
-      Image Gallery
-    </h1>
-    <div class="img-gallery-container">
-    </div>
-  </main>
-  <include src="./views/footer.html"></include>
-</body>
+      <!-- below intro -->
+      <div class="below-intro">
+        <a class="below-intro--link" href="/projects">
+          <div class="achievements">
+            <div class="work">
+              <i class="fas fa-atom"></i>
+              <p class="work-heading">Projects</p>
+              <p class="work-text">
+                This part can give a quick overview of the latest upcoming
+                project and a link to it on the Projects page.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a class="below-intro--link" href="/events">
+          <div class="achievements">
+            <div class="work">
+              <i class="fas fa-skiing"></i>
+              <p class="work-heading">Events</p>
+              <p class="work-text">
+                This part can give a quick overview of the latest upcoming event
+                happening and a link to it on the Events page.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a class="below-intro--link" href="get-involved/">
+          <div class="achievements">
+            <div class="work">
+              <i class="fas fa-ethernet"></i>
+              <p class="work-heading">Get Involved</p>
+              <p class="work-text">
+                This part can give a quick overview of a way to get involved
+                with this non-profit.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
 
+      <!-- about me -->
+      <div class="about-me">
+        <div class="about-me-text">
+          <h2>About Us</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <img
+          src="https://unknown.sytes.net/original_images/Mix/33.jpg"
+          alt="me"
+        />
+      </div>
+
+      <h1 class="img-gallery-text">Image Gallery</h1>
+      <div class="img-gallery-container"></div>
+    </main>
+    <include src="./views/footer.html"></include>
+  </body>
 </html>
