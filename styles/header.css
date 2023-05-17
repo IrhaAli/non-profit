@@ -52,12 +52,33 @@
 
 /* End of header */
 @media screen and (max-width: 820px) {
-  .nav-items {
-    display: none;
+  .header {
+    display: flex;
+    flex-direction: column;
+    transition: display 0.3s ease-in-out;
   }
-  .hamburger {
-    border: 3px solid red;
+  .header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .header .nav-items {
+    display: none;
+    height: 10rem;
+    transition: background-color 0.5s ease-out;
+  }
+  .header .nav-items a {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 97vw;
+    z-index: 1;
+  }
+  .header .hamburger {
+    display: block;
     margin-right: 1rem;
+    color: white;
   }
 }
 

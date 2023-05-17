@@ -194,14 +194,27 @@ input[type="button"].fcf-btn-block {
     margin: 0;
     padding: 0;
     text-align: center;
-    overflow: hidden;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
     /* border: 3px solid green; */
     /* width: 100vw; */
   }
 
   .header {
-    width: 100%;
+    z-index: +1;
   }
+
+  .header-main {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    border: 3px solid red;
+  }
+
+  /* .nav-items a {
+    width: 80%;
+  } */
 
   .contact-header {
     padding: 0;
@@ -217,7 +230,7 @@ input[type="button"].fcf-btn-block {
 
   .footer {
     width: 90%;
-    border: 3px solid yellow;
+    /* border: 3px solid yellow; */
     margin: 0;
   }
 }
