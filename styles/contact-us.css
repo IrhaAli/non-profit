@@ -24,7 +24,6 @@ body {
 
 .fcf-body {
   margin: 0;
-  /* font-family: -apple-system, Arial, sans-serif; */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -198,20 +197,11 @@ input[type="button"].fcf-btn-block {
     overflow:hidden;
     display: flex;
     flex-direction: column;
-    /* border: 3px solid green; */
-    /* width: 100vw; */
   }
 
   .header {
     z-index: +1;
   }
-
-  /* .header-main {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    border: 3px solid red;
-  } */
 
   .nav-items a {
     width: 20%;
@@ -219,19 +209,16 @@ input[type="button"].fcf-btn-block {
 
   .contact-header {
     padding: 0;
-    /* border: 3px solid red; */
     margin: 4rem 0 1rem 0;
   }
   
   #fcf-form-id {
     text-align: left;
     padding: 1rem;
-    /* border: 3px solid blue; */
   }
 
   .footer {
     width: 90%;
-    /* border: 3px solid yellow; */
     margin: 0;
   }
 }

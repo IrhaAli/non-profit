@@ -281,7 +281,6 @@ form {
   /* header */
   .header {
     width: 100vw;
-    /* border: 3px solid blue; */
     overflow: hidden;
     position: fixed;
     height: auto;
