@@ -14,3 +14,12 @@ const handleScroll = () => {
     }
   });
 }
+
+const revealMenu = () => {
+  let menu = document.querySelector(".nav-items");
+  if(menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
